@@ -1,0 +1,23 @@
+main {
+  min-height: 80vh;
+}
+.product-title {
+  height: 2.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.product-image {
+  object-fit: fill;
+}
+.rating span {
+  margin: 0.1rem;
+}
+.rating svg {
+  color: #f8e825;
+}
+.rating-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-left: 0.5rem;
+}

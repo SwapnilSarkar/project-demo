@@ -1,14 +1,14 @@
 const products = [
   {
     _id: "1",
-    name: "Groceries",
+    name: "Groceries and some random text to test the elipsis feature",
     image: "/images/groceries.jpg",
     description: "Fresh fruits and vegetables",
     category: "products",
     price: 100,
     countInStock: 10,
     rating: 4.5,
-    numRevies: 12,
+    numReviews: 11,
   },
   {
     _id: "2",
@@ -18,8 +18,8 @@ const products = [
     category: "products",
     price: 100,
     countInStock: 10,
-    rating: 4.5,
-    numRevies: 12,
+    rating: 4,
+    numReviews: 12,
   },
   {
     _id: "3",
@@ -30,7 +30,7 @@ const products = [
     price: 100,
     countInStock: 10,
     rating: 4.5,
-    numRevies: 12,
+    numReviews: 12,
   },
   {
     _id: "4",
@@ -41,7 +41,7 @@ const products = [
     price: 100,
     countInStock: 10,
     rating: 4.5,
-    numRevies: 12,
+    numReviews: 12,
   },
   {
     _id: "5",
@@ -52,7 +52,7 @@ const products = [
     price: 100,
     countInStock: 10,
     rating: 4.5,
-    numRevies: 12,
+    numReviews: 12,
   },
   {
     _id: "6",
@@ -63,7 +63,7 @@ const products = [
     price: 100,
     countInStock: 10,
     rating: 4.5,
-    numRevies: 12,
+    numReviews: 12,
   },
   {
     _id: "7",
@@ -74,7 +74,7 @@ const products = [
     price: 100,
     countInStock: 10,
     rating: 4.5,
-    numRevies: 12,
+    numReviews: 12,
   },
   {
     _id: "8",
@@ -83,9 +83,9 @@ const products = [
     description: "Fresh fruits and vegetables",
     category: "products",
     price: 100,
-    countInStock: 10,
+    countInStock: 0,
     rating: 4.5,
-    numRevies: 12,
+    numReviews: 12,
   },
 ];
 
