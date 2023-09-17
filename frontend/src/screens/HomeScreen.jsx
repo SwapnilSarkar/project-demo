@@ -1,19 +1,26 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
-import products from "../products";
-import Product from "../components/Product";
+import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+import ImageSlider from "../components/ImageSlider";
+import ProductsCategory from "../components/ProductsCategory";
+import ServicesCategory from "../components/ServicesCategory";
 
 const HomeScreen = () => {
   return (
     <>
-      <h1>Latest Products</h1>
-      <Row>
-        {products.map((product) => (
-          <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-            <Product product={product} />
+      <Container>
+        <Row>
+          <ImageSlider />
+        </Row>
+        <Row>
+          <Col>
+            <ProductsCategory />
           </Col>
-        ))}
-      </Row>
+          <Col>
+            <ServicesCategory />
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };
