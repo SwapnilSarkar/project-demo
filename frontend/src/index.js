@@ -13,6 +13,7 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import ProductDescScreen from "./screens/ProductDescScreen";
 import ProductCategoriesScreen from "./screens/ProductCategoriesScreen";
+import ProductListScreen from "./screens/ProductListScreen";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,8 +23,12 @@ const router = createBrowserRouter(
         path="/products/categories"
         element={<ProductCategoriesScreen />}
       />
+      <Route
+        path="/products/categories/:category"
+        element={<ProductListScreen />}
+      />
       <Route path="/products/categories/:name" element={<ProductScreen />} />
-      <Route path="/products/categories/:id" element={<ProductDescScreen />} />
+      <Route path="/products/:category/:id" element={<ProductDescScreen />} />
     </Route>
   )
 );

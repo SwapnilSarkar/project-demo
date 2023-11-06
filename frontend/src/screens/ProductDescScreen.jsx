@@ -11,7 +11,7 @@ import {
   ListGroupItem,
 } from "react-bootstrap";
 import Rating from "../components/Rating";
-import products from "../products";
+import products from "../Data/products";
 
 const ProductScreen = () => {
   const { id: productId } = useParams();
