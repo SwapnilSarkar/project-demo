@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const ProductsCategory = () => {
   return (
     <div>
-      <Link to="/products/categories">
+      <Link to="/product_categories">
         <Image className="pic img" src={temp} alt="Products Category" fluid />
       </Link>
     </div>

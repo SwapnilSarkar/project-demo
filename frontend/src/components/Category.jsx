@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Category = ({ category }) => {
   return (
     <Card className="my-3 p-3 rounded">
-      <Link to={`/products/categories/${category.name}`}>
+      <Link to={`/product_categories/${category.name}`}>
         <Card.Img
           src={category.image}
           variant="top"
@@ -13,7 +13,7 @@ const Category = ({ category }) => {
         />
       </Link>
       <Card.Body>
-        <Link to={`/products/categories/${category.name}`}>
+        <Link to={`/product_categories/${category.name}`}>
           <Card.Title as="div" className="product-title">
             <strong>{category.name}</strong>
           </Card.Title>

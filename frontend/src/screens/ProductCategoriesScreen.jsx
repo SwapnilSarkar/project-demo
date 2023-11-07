@@ -10,7 +10,7 @@ const ProductCategoriesScreen = () => {
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const { data } = await axios.get("/api/Categories");
+      const { data } = await axios.get("/api/product_categories");
       setCategories(data);
     };
 

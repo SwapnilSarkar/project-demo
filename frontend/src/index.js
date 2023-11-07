@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import HomeScreen from "./screens/HomeScreen";
-import ProductScreen from "./screens/ProductScreen";
+//import ProductScreen from "./screens/ProductScreen";
 import ProductDescScreen from "./screens/ProductDescScreen";
 import ProductCategoriesScreen from "./screens/ProductCategoriesScreen";
 import ProductListScreen from "./screens/ProductListScreen";
@@ -19,16 +19,17 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomeScreen />} />
+      <Route path="/product_categories" element={<ProductCategoriesScreen />} />
       <Route
-        path="/products/categories"
-        element={<ProductCategoriesScreen />}
-      />
-      <Route
-        path="/products/categories/:category"
+        path="/product_categories/:category"
         element={<ProductListScreen />}
       />
-      <Route path="/products/categories/:name" element={<ProductScreen />} />
-      <Route path="/products/:category/:id" element={<ProductDescScreen />} />
+
+      {/* <Route path="/products/categories/:name" element={<ProductScreen />} /> */}
+      <Route
+        path="/product_categories/:category/:id"
+        element={<ProductDescScreen />}
+      />
     </Route>
   )
 );

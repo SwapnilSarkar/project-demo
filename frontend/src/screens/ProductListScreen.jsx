@@ -9,23 +9,26 @@ import axios from "axios";
 const ProductListScreen = () => {
   const [products, setProducts] = useState([]);
 
+  const { category: productCategory } = useParams();
+
   useEffect(() => {
     const fetchProducts = async () => {
-      const { data } = await axios.get("/api/products");
+      const { data } = await axios.get(
+        `/api/product_categories/${productCategory}`
+      );
       setProducts(data);
     };
 
     fetchProducts();
   }, []);
 
-  const { category: productCategory } = useParams();
-  console.log(productCategory);
-  //console.log(products);
-  const productList = products.filter((p) => {
-    console.log(p.category, productCategory);
-    return p.category.toLowerCase() === productCategory.toLowerCase();
-  });
-  console.log(products);
+  // console.log(productCategory);
+  // //console.log(products);
+  // const productList = products.filter((p) => {
+  //   console.log(p.category, productCategory);
+  //   return p.category.toLowerCase() === productCategory.toLowerCase();
+  // });
+  // console.log(products);
 
   // const subProducts = new Array();
 
@@ -40,7 +43,7 @@ const ProductListScreen = () => {
     <>
       <h1>ProductListScreen</h1>
       <Row>
-        {productList.map((product) => (
+        {products.map((product) => (
           <Col key={product.name} sm={12} md={6} lg={4} xl={3}>
             <Product product={product} />
           </Col>

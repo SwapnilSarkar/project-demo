@@ -11,17 +11,22 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-app.get("/api/categories", (req, res) => {
+app.get("/api/product_categories", (req, res) => {
   res.json(categories);
 });
 
-app.get("/api/products", (req, res) => {
-  res.json(products);
+app.get("/api/product_categories/:category", (req, res) => {
+  const productList = products.filter((p) => {
+    console.log(p.category, req.params.category);
+    return p.category.toLowerCase() === req.params.category.toLowerCase();
+  });
+  console.log(productList);
+  res.json(productList);
 });
 
-// app.get("/api/products/:id", (req, res) => {
-//   const product = products.find((p) => p._id === req.params.id);
-//   res.json(product);
-// });
+app.get("/api/product_categories/:category/:id", (req, res) => {
+  const product = products.find((p) => p._id === req.params.id);
+  res.json(product);
+});
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
