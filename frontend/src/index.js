@@ -14,6 +14,7 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductDescScreen from "./screens/ProductDescScreen";
 import ProductCategoriesScreen from "./screens/ProductCategoriesScreen";
 import ProductListScreen from "./screens/ProductListScreen";
+import PageNotFound from "./screens/PageNotFound";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
         path="/product_categories/:category/:id"
         element={<ProductDescScreen />}
       />
+      <Route path="*" element={<PageNotFound />} />
     </Route>
   )
 );

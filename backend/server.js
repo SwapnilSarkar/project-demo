@@ -25,7 +25,9 @@ app.get("/api/product_categories/:category", (req, res) => {
 });
 
 app.get("/api/product_categories/:category/:id", (req, res) => {
-  const product = products.find((p) => p._id === req.params.id);
+  const product = products.find((p) => {
+    return p._id === req.params.id && p.category === req.params.category;
+  });
   res.json(product);
 });
 

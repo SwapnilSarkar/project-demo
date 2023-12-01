@@ -30,7 +30,7 @@ const ProductScreen = () => {
     };
 
     fetchProduct();
-  }, [productId]);
+  }, [productId]); // Not able to figure out how to view page not found when the category does to match with the product ID.
 
   // const product = products.find((p) => p._id === productId);
   console.log(product);
