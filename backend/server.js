@@ -1,34 +1,27 @@
-import express from "express";
-import dotenv from "dotenv";
+const express = require("express");
+const dotenv = require("dotenv");
 dotenv.config();
-import products from "./data/products.js";
-import categories from "./data/categories.js";
+const connectDB = require("./config/db.js");
+// const products = require("./data/products.js");
+// const categories = require("./data/categories.js");
+const productRoutes = require("./routes/productRoutes.js");
 const port = process.env.PORT || 5000;
 
+connectDB(); // Connect to MongoDB
+
 const app = express();
+
+// app.use(express.json());
+// app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-app.get("/api/product_categories", (req, res) => {
-  res.json(categories);
-});
+// app.get("/api", (req, res) => {
+//   res.send("API is running...");
+// });
 
-app.get("/api/product_categories/:category", (req, res) => {
-  const productList = products.filter((p) => {
-    console.log(p.category, req.params.category);
-    return p.category.toLowerCase() === req.params.category.toLowerCase();
-  });
-  console.log(productList);
-  res.json(productList);
-});
-
-app.get("/api/product_categories/:category/:id", (req, res) => {
-  const product = products.find((p) => {
-    return p._id === req.params.id && p.category === req.params.category;
-  });
-  res.json(product);
-});
+app.use("/api", productRoutes);
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

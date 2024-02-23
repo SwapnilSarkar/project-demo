@@ -31,6 +31,7 @@ const router = createBrowserRouter(
         path="/product_categories/:category/:id"
         element={<ProductDescScreen />}
       />
+      <Route path="/pagenotfound" element={<PageNotFound />} />
       <Route path="*" element={<PageNotFound />} />
     </Route>
   )

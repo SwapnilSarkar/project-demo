@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Row,
   Col,
@@ -11,11 +11,18 @@ import {
   Button,
   ListGroupItem,
 } from "react-bootstrap";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import Rating from "../components/Rating";
 import axios from "axios";
 //import products from "../Data/products";
 
 const ProductScreen = () => {
+  const navigate = useNavigate();
   const [product, setProduct] = useState([]);
 
   const { category: productCategory } = useParams();
@@ -26,7 +33,12 @@ const ProductScreen = () => {
       const { data } = await axios.get(
         `/api/product_categories/${productCategory}/${productId}`
       );
-      setProduct(data);
+      console.log("Test" + data);
+      if (data === null || data === undefined) {
+        console.log("test:" + data);
+        // <Navigate to="/" replace={true} />;
+        navigate("/pagenotfound");
+      } else setProduct(data);
     };
 
     fetchProduct();

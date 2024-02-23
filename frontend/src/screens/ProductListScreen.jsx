@@ -16,19 +16,29 @@ const ProductListScreen = () => {
       const { data } = await axios.get(
         `/api/product_categories/${productCategory}`
       );
+      console.log(data);
       setProducts(data);
+
+      // const data = await axios.get(`/api/products`);
+      // const productList = data.filter((p) => {
+      //   console.log(p.category, productCategory);
+      //   return p.category.toLowerCase() === productCategory.toLowerCase();
+      // });
+      // console.log(data);
+
+      // setProducts(data);
     };
 
     fetchProducts();
   }, []);
 
   // console.log(productCategory);
-  // //console.log(products);
+  //console.log(products);
   // const productList = products.filter((p) => {
   //   console.log(p.category, productCategory);
   //   return p.category.toLowerCase() === productCategory.toLowerCase();
   // });
-  // console.log(products);
+  // console.log(productList);
 
   // const subProducts = new Array();
 
